@@ -65,20 +65,5 @@ namespace MultiValueDictionaryUnitTest
             string sMembersForKeyAreEmpty = mvdToTest.Members("removethis");
             Assert.AreEqual(sMembersForKeyAreEmpty, "ERROR, key does not exist", "The key isn't in the dictionary now that all values are removed");
         }
-
-        [Test(Description = "Tests the Keys and Members functions")]
-        public void KeyMembersTests()
-        {
-            List<string> sKeys = new List<string>();
-            mvdToTest.Clear();
-            for(int i = 0; i < 100; i++)
-            {
-                string sKeyToUse = $"KeysTest-{i}";
-                sKeys.Add(sKeyToUse);
-                mvdToTest.Add(sKeyToUse, "testval");
-            }
-            string sKeyToMatch = string.Join(",", sKeys);
-
-        }
     }
 }
